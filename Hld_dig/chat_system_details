@@ -1,0 +1,119 @@
+BOE->
+    total - 1 billion users
+    DAV - 10 million
+    total_msgs - 200million
+    msgs/sec = 200M/24*2600=2314
+
+    Storage->
+    1 msg size - 1KB
+    total storage - 200GB/day
+
+
+ APIs->
+    Authentication
+    POST - auth/login (it has sensitive data to it should be sent with post - create token)
+    POST - auth/logout (expire the token)
+    GET - auth/refresh-token (JWT usage)
+
+    User
+    GET -> user/profile/{userId}
+    PUT -> user/profile/{userId}
+
+    Chat
+    GET ->chat/{userId}/conversations
+
+    GroupChat
+    POST ->group/create
+    POST ->group/add/{userId}
+    POST ->group/remove/{userId}
+
+    LastSeen
+    GET ->chat/lastseen?userId
+
+    Conversation for websocket
+    wss/connect
+    wss/send
+    wss/receive
+
+    Delivery-Sent staus
+    POST - message/{id}/sent
+    POST - message/{id}/delivered
+    POST - message/{id}/read
+
+
+Websockets actually work-
+
+Step 1: How WebSocket actually starts
+
+👉 It begins as an HTTP request
+GET /chat HTTP/1.1
+Host: example.com
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: abc123
+Sec-WebSocket-Version: 13
+
+👉 Server responds:
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+
+
+Step 2: After connection (Real Magic 🔥)
+
+👉 No more HTTP
+👉 Just messages flowing both ways
+🔹 Example Flow (Chat System)
+🟢 Client connects
+const socket = new WebSocket("wss://example.com/chat");
+🟢 Send message
+socket.send(JSON.stringify({
+  type: "SEND_MESSAGE",
+  conversationId: "123",
+  message: "Hello"
+}));
+🟢 Receive message
+socket.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+  console.log("Received:", data);
+};
+
+
+
+Database Schema-
+SQL
+
+user->
+id
+name
+phonenumber
+profilephoto
+textstatus
+email
+createdAt
+
+group details->
+groupid
+member
+createdAt
+
+NO-SQL
+cassandra (key-value)
+
+1-1 Messages->
+message_id
+message_from
+message_to
+content
+created_at
+
+group messages->
+group_id
+message_id
+user_id
+content
+created_at
+
+
+
+
