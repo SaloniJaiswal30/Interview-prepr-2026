@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ZI_hbdbaeEe5ziOPV8GA">
+    <mxGraphModel dx="964" dy="667" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="440" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Aution Service" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-15" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="BlRtzGTYbiUgU63JzdBe-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-22" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="BlRtzGTYbiUgU63JzdBe-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="bid Service" vertex="1">
+          <mxGeometry height="60" width="120" x="430" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="40" width="90" x="50" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-10" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="BlRtzGTYbiUgU63JzdBe-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-19" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="BlRtzGTYbiUgU63JzdBe-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Load&lt;div&gt;Balancer&lt;/div&gt;" vertex="1">
+          <mxGeometry height="260" width="50" x="170" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-6" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.06;entryY=0.423;entryDx=0;entryDy=0;entryPerimeter=0;" target="BlRtzGTYbiUgU63JzdBe-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Producer&lt;div&gt;service&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="60" x="260" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-12" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="BlRtzGTYbiUgU63JzdBe-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-8" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.managed_streaming_for_kafka;" value="" vertex="1">
+          <mxGeometry height="60" width="60" x="340" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-11" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="BlRtzGTYbiUgU63JzdBe-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-13" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sql_workbench;" value="" vertex="1">
+          <mxGeometry height="58" width="58" x="590" y="202" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-14" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="BlRtzGTYbiUgU63JzdBe-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-16" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.411;entryY=0.9;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="BlRtzGTYbiUgU63JzdBe-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="410" />
+              <mxPoint x="87" y="410" />
+            </Array>
+            <mxPoint x="500" y="444" as="sourcePoint" />
+            <mxPoint x="118.99000000000002" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SSE" vertex="1">
+          <mxGeometry height="30" width="60" x="270" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;ul&gt;&lt;li&gt;User can create auction using action service&lt;/li&gt;&lt;li&gt;Update bid service using transaction and locks to deal with consistency. As people would be reading existing bid and then add new bid for that auction. if 2 person try to read and update then this can cause inconsistency.&lt;/li&gt;&lt;ul&gt;&lt;li&gt;we apply lock on single record in auction table instead of putting lock on whole bid table.&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Client request for bid update, it goes to kafka, update in db and the send the event to client&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&amp;nbsp;Here suppose kafka push event to bid service 2 but bid service 1 is connected to client1, So to handle this we use pub/sub again where bidservice publish event whenever it gets the event and other instances consumes it. bid service who is connected to client1 consumes it and send to client1&lt;/li&gt;&lt;li&gt;Note each bid service store the client info in-memory to whom it is connected.&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="30" width="560" x="70" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-25" edge="1" parent="1" source="BlRtzGTYbiUgU63JzdBe-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" target="BlRtzGTYbiUgU63JzdBe-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BlRtzGTYbiUgU63JzdBe-23" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.managed_streaming_for_kafka;" value="" vertex="1">
+          <mxGeometry height="60" width="60" x="570" y="370" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

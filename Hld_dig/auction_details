@@ -1,0 +1,34 @@
+BOE
+
+Total users- 1 billion
+DAU - 1 million
+each total bids - 10
+Total bids in a day - 10million
+bids/second- 570
+
+avg bid size - 1kb
+total storage needed /day = 10 GB
+10 year - 36500GB = 36TB
+
+
+APIs-
+
+Authentication
+
+POST auth/login
+POST auth/logout
+POST user/profile
+
+Auction
+
+GET auction/user // provide auction list
+GET auction/user/{auctionid}
+POST auction/new
+POST auction/update
+
+Bid
+POST bid/{auctionid}
+GET bid/{auctionid}
+
+
+
