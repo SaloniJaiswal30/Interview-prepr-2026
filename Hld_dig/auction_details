@@ -1,4 +1,4 @@
-BOE
+BOE ->
 
 Total users- 1 billion
 DAU - 1 million
@@ -11,7 +11,7 @@ total storage needed /day = 10 GB
 10 year - 36500GB = 36TB
 
 
-APIs-
+APIs ->
 
 Authentication
 
@@ -30,5 +30,22 @@ Bid
 POST bid/{auctionid}
 GET bid/{auctionid}
 
+
+DB Schema details ->
+
+Auction Table
+Auction_id
+user_id
+base_price
+max_bid
+create_ts
+
+Bid table
+Bid_id
+auction_id
+user_id
+bid_amount
+status
+create_ts
 
 

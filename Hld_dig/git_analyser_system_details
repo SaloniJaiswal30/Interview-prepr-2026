@@ -1,0 +1,41 @@
+BOE
+
+DAU- 1M
+PR per person in a day - 2
+PR per sec - 23/sec
+
+Storage -
+Avg files changed per PR = 10
+Avg diff per file = 50 KB
+23*500KB - 12.5MB
+on an average for peek we will take 1GB
+
+
+API
+POST v1/webhooks/pr
+POST v1/pr/{pr_id}/analyze - manually trigger
+GET /v1/prs/{pr_id}/report
+
+
+DB schema
+
+Metadata->
+pr_id
+repo_id
+user
+branch
+status
+
+Job status->
+
+Job_id
+pr_id
+status
+final_score
+total_issues
+
+
+
+
+
+
