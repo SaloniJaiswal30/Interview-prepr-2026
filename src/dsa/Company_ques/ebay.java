@@ -1,4 +1,4 @@
-package Company_ques;
+package dsa.Company_ques;
 
 import java.util.*;
 

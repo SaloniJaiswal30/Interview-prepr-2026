@@ -1,22 +1,10 @@
-package Tree;
+package dsa.Tree;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class TreeNodeEx {
-    int val;
-    TreeNodeEx left;
-    TreeNodeEx right;
-    TreeNodeEx() {}
-    TreeNodeEx(int val) { this.val = val; }
-    TreeNodeEx(int val, TreeNodeEx left, TreeNodeEx right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
 
-class InOrder {
+class PostOrder {
     public List<Integer> inorderTraversal(TreeNodeEx root) {
         List<Integer> list=new ArrayList<>();
         traverse(root,list);
@@ -28,9 +16,9 @@ class InOrder {
             return;
         if(root.left!=null)
             traverse(root.left,list);
-        list.add(root.val);
         if(root.right!=null)
             traverse(root.right,list);
+        list.add(root.val);
     }
 
 }

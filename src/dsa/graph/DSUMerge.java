@@ -1,4 +1,4 @@
-package graph;
+package dsa.graph;
 import java.util.*;
 public class DSUMerge {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {

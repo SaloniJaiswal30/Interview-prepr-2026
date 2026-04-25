@@ -1,6 +1,4 @@
-package graph;
-
-import java.util.*;
+package dsa.graph;
 
 public class MaxAreaOfIsland {
     public int maxAreaOfIsland(int[][] grid) {

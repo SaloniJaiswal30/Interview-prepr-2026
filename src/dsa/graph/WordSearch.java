@@ -1,6 +1,4 @@
-package graph;
-
-import java.util.*;
+package dsa.graph;
 
 public class WordSearch {
     public boolean exist(char[][] board, String word) {

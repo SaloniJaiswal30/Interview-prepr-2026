@@ -1,4 +1,4 @@
-package Tree;
+package dsa.Tree;
 
 import java.util.ArrayList;
 import java.util.List;
