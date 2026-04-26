@@ -1,4 +1,4 @@
-package LLD.Snake_ladder;
+package LLD.SnakeLadderGame;
 
 public enum GameStatus {
     ON_GOING,

@@ -1,4 +1,4 @@
-package LLD.Snake_ladder;
+package LLD.SnakeLadderGame;
 
 abstract class BoardEntity {
     private final int start;

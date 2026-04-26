@@ -1,4 +1,4 @@
-package LLD.Snake_ladder;
+package LLD.SnakeLadderGame;
 
 
 import java.util.Random;

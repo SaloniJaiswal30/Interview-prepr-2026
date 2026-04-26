@@ -1,4 +1,4 @@
-package LLD.Snake_ladder;
+package LLD.SnakeLadderGame;
 
 public class Player {
     private final String  name;

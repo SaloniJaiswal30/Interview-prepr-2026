@@ -1,4 +1,4 @@
-package LLD.Snake_ladder;
+package LLD.SnakeLadderGame;
 
 public class Snake extends BoardEntity {
     public Snake(int start, int end) {
