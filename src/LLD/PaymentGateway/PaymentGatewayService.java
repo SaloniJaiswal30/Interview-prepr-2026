@@ -7,8 +7,6 @@ import java.util.List;
 public class PaymentGatewayService {
     private static PaymentGatewayService instance;
 
-    List<PaymentObserver> observerList = new ArrayList<>();
-
     private PaymentGatewayService(){}
 
     public static synchronized PaymentGatewayService getInstance() {
@@ -28,28 +26,15 @@ public class PaymentGatewayService {
             }
             else
                 transaction.setStatus(PaymentStatus.FAILED);
-            notifyObservers(transaction);
+            notifyObservers(transaction, paymentRequest.getObservers());
         }
 
     }
 
-    public void addObserver(PaymentObserver p){
-        observerList.add(p);
-    }
-
-    public void removeObserver(PaymentObserver p){
-        observerList.remove(p);
-    }
-
-    public List<PaymentObserver> getObserverList() {
-        return observerList;
-    }
-
-    public void notifyObservers(Transaction  transaction){
-        for(PaymentObserver paymentObserver:observerList){
-            paymentObserver.TransactionNotification(transaction);
+    public void notifyObservers(Transaction transaction, List<PaymentObserver> observers){
+        for (PaymentObserver observer : observers) {
+            observer.TransactionNotification(transaction);
         }
-
     }
 
 }
