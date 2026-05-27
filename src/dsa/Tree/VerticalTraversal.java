@@ -1,5 +1,4 @@
 package dsa.Tree;
-import javax.swing.tree.TreeNode;
 import java.util.*;
 
 class PairVertical{
@@ -17,12 +16,12 @@ class VerticalTraversal {
     public List<List<Integer>> verticalTraversal(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         Map<Integer,TreeMap<Integer,ArrayList<Integer>>> map = new HashMap<>();
-        Queue<Pair> q = new ArrayDeque<>();
-        q.offer(new Pair(root,0,0));
+        Queue<PairVertical> q = new ArrayDeque<>();
+        q.offer(new PairVertical(root,0,0));
         int minval=Integer.MAX_VALUE;
         int maxval=Integer.MIN_VALUE;
         while(!q.isEmpty()){
-            Pair top = q.poll();
+            PairVertical top = q.poll();
             minval = top.depth<minval? top.depth:minval;
             maxval = top.depth>maxval? top.depth:maxval;
 
@@ -32,10 +31,10 @@ class VerticalTraversal {
                     .add(top.node.val);
 
             if(top.node.left!=null){
-                q.offer(new Pair(top.node.left,top.depth-1,top.height+1));
+                q.offer(new PairVertical(top.node.left,top.depth-1,top.height+1));
             }
             if(top.node.right!=null){
-                q.offer(new Pair(top.node.right,top.depth+1,top.height+1));
+                q.offer(new PairVertical(top.node.right,top.depth+1,top.height+1));
             }
         }
 
