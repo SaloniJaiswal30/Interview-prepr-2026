@@ -1,0 +1,78 @@
+
+Functional requirement ->
+user should be able to get event details
+book event
+generate ticket
+
+Non Function requirement
+Fetch details with low latency
+consistency on ticket booking
+availability on event details
+handle surges for popular events
+read>>> write
+
+
+
+APIs ->
+
+Authentication
+
+POST auth/login
+POST auth/logout
+POST user/profile
+
+Event
+
+POST event/add
+PUT event/update
+DELETE event/Delete
+GET event/{eventid}
+GET event?type=type&date=date
+
+Ticket
+
+GET ticket/{ticketId}
+
+Book
+
+POST book/reserve
+POST book/complete
+
+
+
+DB Schema details ->
+
+    Event table
+
+    Venue table
+
+    Performer table
+
+    Ticket Table
+
+    User Table
+
+Theory Details-
+
+1) To get the details faster for any type of search, we have used elastic search.
+2) Elastic search always used as a secondary DB as we can't do joins and all like we do in sql.
+Elastic search always gets updated via CDC pipeline. We would need to handle consistency if we try to update
+ in 2 db(sql, elastic search).
+3) For booking we are having 2 steps -
+    (1) we reserve the booking, reserve can only wait for a certain time ex: 5min
+    (2) complete the booking
+4) At a time multiple can try to update the booking, In this case putting locks on db and use a cron job
+to remove reserved entries if user has not booked in the 5min window. In this if cron job didn't run for 1 cycle
+then the seat will be reserved for longer amount of time.
+5) There is a better way to handle case (point - 4 ). We can use radis to keep all the reserved seat entries
+ for TTL -5min.In this way it we can handle deletion of revered seats and also won't cause load on DB.
+6) Now during peak Event, as our system can take only x load and have y seats available. but traffic is 100x.
+In this case we need to use virtual waiting queue. So after a certain limit, users request waits in the virtual queue and
+once the current load decreases, requests which are in waiting queue would be pulled.
+7) this Queue can be a redis, in which data can be stored in sorted set / list. Here we use sortedset so that
+if user wants to fetch the status of the request, it can be fetched in logn time, meaning how many users are ahead of him.
+8) how to handle redis failures for reserved seats - In this case, an another instance can take place, but we
+ loose all the reserved requests. At this time if some other user comes and try to book, they will be able to book.
+ In this user experience will hamper but consistency will be maintained
+
+
