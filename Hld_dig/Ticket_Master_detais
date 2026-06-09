@@ -69,7 +69,7 @@ then the seat will be reserved for longer amount of time.
 6) Now during peak Event, as our system can take only x load and have y seats available. but traffic is 100x.
 In this case we need to use virtual waiting queue. So after a certain limit, users request waits in the virtual queue and
 once the current load decreases, requests which are in waiting queue would be pulled.
-7) this Queue can be a redis, in which data can be stored in sorted set / list. Here we use sortedset so that
+7) this Queue can be a redis/DB, in which data can be stored in sorted set / list. Here we use redis sortedset so that
 if user wants to fetch the status of the request, it can be fetched in logn time, meaning how many users are ahead of him.
 8) how to handle redis failures for reserved seats - In this case, an another instance can take place, but we
  loose all the reserved requests. At this time if some other user comes and try to book, they will be able to book.

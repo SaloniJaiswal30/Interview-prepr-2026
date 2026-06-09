@@ -1,0 +1,60 @@
+
+Functional requirement ->
+Rider should be able to do cost estimation from source - destination
+Rider should be able to book the ride
+Driver should get request
+Driver can accept/reject
+
+Non Function requirement
+a driver can't get 2 request at the same time and 2 driver should get same request - consistency
+availability outside of matching
+handle peak hour surges
+low latency matching <1min
+
+
+
+
+APIs ->
+
+Authentication
+
+POST auth/login
+POST auth/logout
+POST user/profile
+
+POST ride/estimates?source=source&destination=destination
+POST ride/book
+
+POST driver/location/update
+
+POST driver/ride/request
+POST driver/ride/{rideid}/status/{status}
+
+
+
+
+DB Schema details ->
+
+User table
+Driver Table
+Rides Table
+
+Location history
+
+
+Theory Details ->
+1. Use Redis to do location update where write>>> read(600K/sec). In this we use geohashing in redis
+ instead of quardtree because in quardtree if updates are very freq then everytime that tree would
+ need the modification, which would be an expensive process.
+2. How to reduce the location writes - handle dynamically at the client level
+        a. send update in 10-15sec instead of every 5 sec.
+        b. Don't send update if the location is not changed.
+3. Two driver should get same request - For this after getting list of available near by drivers, sent request
+one by one to those drivers and wait some sec says 5 sec for response and then send to next driver if
+its not accepted. This will give issue in case of multiple service instances and all fetch available driver and
+send the request to same drivers. Here we would need to store the info that request is sent to this driver and
+after a certain waiting time we would need to delete that entry as well. In this situation, we will use redis
+(distributed lock) which stores - driverid, requestsent, TTL(to handle deletion).
+4 . As we are already using Redis for location. Here we can use dynamodb to store all kinds of data. In Dynamo db
+also we can have TTL, So instead of redis will have one more table in db instead of redis.
+5. to handle surge request - kafka is used having location id is Partition key
