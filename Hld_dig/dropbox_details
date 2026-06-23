@@ -1,0 +1,63 @@
+
+Functional requirement ->
+Upload the data
+Download the data
+sync files across
+
+Non Function requirement
+availability>> consistency
+low latency upload
+support large files
+High data integrity (sync accuracy)
+
+
+APIs ->
+
+Authentication
+
+POST auth/login
+POST auth/logout
+POST user/profile
+
+POST file/upload
+GET files/fileId
+GET changes?since={timestamp} -> response - changed file ids
+POST file/sync
+
+
+
+DB Schema details ->
+metadata table (dynamo db)
+id,
+name,
+created
+modified
+ownerid
+type
+size
+compression algo
+chunks{
+    id
+    url
+    created
+    modified
+}
+
+
+
+Theory Details ->
+1) Upload and download functionality - When upload request is sent by client, metadata stored in the system and
+signed url has been requested from S3, once we get signed URL from S3, its sent back to client and then client
+directly upload to S3. Similarly during syc/download, url would be fetched from db and the file will be directly
+fetched from S3.
+2) Sync works - sync service fetches the metadata from db and see if anything has changes after given timestamp.
+If yes it sends the metadata along with S3 links, so that client local will be in sync.
+3) Client knows if the file has been already modified or it needs to be modify in local - with every file there
+is a hashvalue value, if the hashvalue is changed it means that file is modified.
+4) Changes in local folder identification and upload to S3 (if there is any change to local folder, it should
+be synced) - there are some methods in windows/mac- which monitoe a location and if there is any change, it notifies.
+5) how to upload big files from client to S3 - Client chunk the files according to bandwidth and size and these chunks
+gets stored in the S3.
+6) Quick sync - polling when the local folder is open
+7) To utilize the bandwidth correctly, client cna compress the file and send it. mp4 files are already in compressed format
+so only compress files whose compression will be beneficial
