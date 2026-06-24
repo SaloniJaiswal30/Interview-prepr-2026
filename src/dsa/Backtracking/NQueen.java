@@ -24,6 +24,7 @@ public class NQueen {
             position.append(".");
         }
 
+
         for(int col=0;col<n;col++){
             if(validPlace(board,row, col,rowCheck, colCheck,diag,antiDiag)){
                 position.setCharAt(col, 'Q');
